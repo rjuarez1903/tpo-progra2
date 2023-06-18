@@ -25,10 +25,11 @@ public class Main {
 	    
 //	    Ejercicio 4
 //	    System.out.println(MetodosPila.porcentajeDePares(pila));
-//	    ConjuntoTDA conjuntoRepe = MetodosPila.conjuntoDeRepetidos(pila);
+	    ConjuntoTDA conjuntoRepe = metodosExternos.MetodosExternos.conjuntoRepetidos(pila);
+	    metodosExternos.MetodosExternos.imprimirConjunto(conjuntoRepe);
 	    
 //	    Ejercicio 5
-//	    MetodosConjunto.imprimirConjunto(conjuntoRepe);
+//	    
 //	    DiccionarioSimple diccionario = MetodosExternos.pilaADiccionario(pila);
 //	    System.out.println(diccionario.recuperar(10));
 //	    System.out.println(diccionario.recuperar(5));
@@ -114,31 +115,31 @@ public class Main {
 	    
 //	    Ejercicio 9
 	    
-	    ABBTDA arbol = new ABB();
-	    arbol.inicializarArbol();
-	    arbol.agregarElem(20);
-	    arbol.agregarElem(10);
-	    arbol.agregarElem(30);
-	    arbol.agregarElem(5);
-	    arbol.agregarElem(15);
-	    arbol.agregarElem(25);
-	    arbol.agregarElem(35);
-	    arbol.agregarElem(2);
-	    arbol.agregarElem(4);
-	    arbol.agregarElem(6);
-	    arbol.agregarElem(8);
-	    arbol.agregarElem(22);
-	    arbol.agregarElem(24);
-	    arbol.agregarElem(26);
-	    arbol.agregarElem(28);
-
-	    // Imprimir el árbol en orden
-	    System.out.println("Árbol en orden:");
-	    metodosExternos.MetodosExternos.imprimirEnOrden(arbol);
-
-	    // Calcular la cantidad de hojas con valor par
-	    int hojasPares = metodosExternos.MetodosExternos.cantidadHojasPares(arbol);
-	    System.out.println("Cantidad de hojas con valor par: " + hojasPares);
+//	    ABBTDA arbol = new ABB();
+//	    arbol.inicializarArbol();
+//	    arbol.agregarElem(20);
+//	    arbol.agregarElem(10);
+//	    arbol.agregarElem(30);
+//	    arbol.agregarElem(5);
+//	    arbol.agregarElem(15);
+//	    arbol.agregarElem(25);
+//	    arbol.agregarElem(35);
+//	    arbol.agregarElem(2);
+//	    arbol.agregarElem(4);
+//	    arbol.agregarElem(6);
+//	    arbol.agregarElem(8);
+//	    arbol.agregarElem(22);
+//	    arbol.agregarElem(24);
+//	    arbol.agregarElem(26);
+//	    arbol.agregarElem(28);
+//
+//	    // Imprimir el árbol en orden
+//	    System.out.println("Árbol en orden:");
+//	    metodosExternos.MetodosExternos.imprimirEnOrden(arbol);
+//
+//	    // Calcular la cantidad de hojas con valor par
+//	    int hojasPares = metodosExternos.MetodosExternos.cantidadHojasPares(arbol);
+//	    System.out.println("Cantidad de hojas con valor par: " + hojasPares);
 	}
 
 }

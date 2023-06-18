@@ -22,22 +22,36 @@ public class MetodosExternos {
 	 * @return El porcentaje de números pares en la pila, como un valor de tipo double.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
 	 * @postcondiciones La pila no se modifica.
-	 * @costo El costo de este método depende del tamaño de la pila.
+	 * @costo El costo de este método el lineal.
 	 */
+	
+	
 	public static double porcentajeDePares(PilaTDA pila) {
-		double total = 0;
-		double pares = 0;
-		double resultado = 0;
-		while (!pila.pilaVacia()) {
-			if (pila.tope() % 2 == 0) 
-				pares++;
-			total++;
-			pila.desapilar();
-		} 
-		if (pares != 0) 
-			resultado = pares / total * 100;
-		return resultado;
+	    PilaTDA pilaAux = new PilaSt(); // Pila auxiliar para realizar operaciones
+	    pilaAux.inicializarPila();
+	    double total = 0;
+	    double pares = 0;
+	    double resultado = 0;
+
+	    while (!pila.pilaVacia()) {
+	        if (pila.tope() % 2 == 0) 
+	            pares++; // Incrementa el contador de números pares
+	        total++; // Incrementa el contador total
+	        pilaAux.apilar(pila.tope()); // Apila el elemento en la pila auxiliar
+	        pila.desapilar(); // Desapila el elemento de la pila original
+	    }
+
+	    while (!pilaAux.pilaVacia()) {
+	        pila.apilar(pilaAux.tope()); // Restaura la pila original apilando los elementos desde la pila auxiliar
+	        pilaAux.desapilar(); // Desapila el elemento de la pila auxiliar
+	    }
+
+	    if (pares != 0) 
+	        resultado = pares / total * 100; // Calcula el resultado como el porcentaje de números pares
+
+	    return resultado; // Devuelve el resultado
 	}
+
 	
 //	Ejercicio 5
 	/**
@@ -46,18 +60,37 @@ public class MetodosExternos {
 	 * @param pila La PilaTDA de la cual se obtendrán los elementos repetidos.
 	 * @return Un ConjuntoTDA que contiene los elementos repetidos en la pila.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
-	 * @postcondiciones La pila y su contenido no se modifican.
-	 * @costo El costo de este método depende del tamaño de la pila y del conjunto de elementos repetidos.
+	 * @postcondiciones La pila no se modifica.
+	 * @costo El costo de este método es lineal
 	 */
 	public static ConjuntoTDA conjuntoRepetidos(PilaTDA pila) {
-		ConjuntoTDA conjuntoRepetidos = new ConjuntoSt();
-		conjuntoRepetidos.inicializarConjunto();
-		while (!pila.pilaVacia()) {
-			if (!conjuntoRepetidos.pertenece(pila.tope())) {
-				conjuntoRepetidos.agregar(pila.tope());
-			}
-		}
-		return conjuntoRepetidos;
+	    PilaTDA pilaAux = new PilaSt(); 
+	    ConjuntoTDA conjuntoAux = new ConjuntoSt();
+	    ConjuntoTDA conjuntoRepetidos = new ConjuntoSt();
+	    pilaAux.inicializarPila();
+	    conjuntoAux.inicializarConjunto();
+	    conjuntoRepetidos.inicializarConjunto();
+	    
+
+	    while (!pila.pilaVacia()) {
+	        int elemento = pila.tope();
+	       
+	        if (conjuntoAux.pertenece(elemento)) 
+	            conjuntoRepetidos.agregar(elemento);
+	        else  
+	        	conjuntoAux.agregar(elemento);
+
+	        pilaAux.apilar(elemento); 
+	        pila.desapilar(); 
+	    }
+
+	    
+	    while (!pilaAux.pilaVacia()) {
+	        pila.apilar(pilaAux.tope()); 
+	        pilaAux.desapilar(); 
+	    }
+
+	    return conjuntoRepetidos; 
 	}
 	
 //	Ejercicio 6

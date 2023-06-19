@@ -14,6 +14,14 @@ public class MetodosExternos {
 		} 
 	}
 	
+	public static void imprimirEnOrden(ABBTDA a) {
+	    if (!a.arbolVacio()) {
+	        imprimirEnOrden(a.hijoIzq());
+	        System.out.print(a.raiz() + " ");
+	        imprimirEnOrden(a.hijoDer());
+	    }
+	}
+	
 //	Ejercicio 4
 	/**
 	 * Calcula el porcentaje de números pares en una pila.
@@ -25,9 +33,8 @@ public class MetodosExternos {
 	 * @costo El costo de este método el lineal.
 	 */
 	
-	
 	public static double porcentajeDePares(PilaTDA pila) {
-	    PilaTDA pilaAux = new PilaSt(); // Pila auxiliar para realizar operaciones
+	    PilaTDA pilaAux = new PilaSt(); 
 	    pilaAux.inicializarPila();
 	    double total = 0;
 	    double pares = 0;
@@ -35,21 +42,21 @@ public class MetodosExternos {
 
 	    while (!pila.pilaVacia()) {
 	        if (pila.tope() % 2 == 0) 
-	            pares++; // Incrementa el contador de números pares
-	        total++; // Incrementa el contador total
-	        pilaAux.apilar(pila.tope()); // Apila el elemento en la pila auxiliar
-	        pila.desapilar(); // Desapila el elemento de la pila original
+	            pares++; 
+	        total++; 
+	        pilaAux.apilar(pila.tope()); 
+	        pila.desapilar(); 
 	    }
 
 	    while (!pilaAux.pilaVacia()) {
-	        pila.apilar(pilaAux.tope()); // Restaura la pila original apilando los elementos desde la pila auxiliar
-	        pilaAux.desapilar(); // Desapila el elemento de la pila auxiliar
+	        pila.apilar(pilaAux.tope()); 
+	        pilaAux.desapilar(); 
 	    }
 
 	    if (pares != 0) 
-	        resultado = pares / total * 100; // Calcula el resultado como el porcentaje de números pares
+	        resultado = pares / total * 100;
 
-	    return resultado; // Devuelve el resultado
+	    return resultado; 
 	}
 
 	
@@ -61,7 +68,7 @@ public class MetodosExternos {
 	 * @return Un ConjuntoTDA que contiene los elementos repetidos en la pila.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
 	 * @postcondiciones La pila no se modifica.
-	 * @costo El costo de este método es lineal
+	 * @costo El costo de este método es polinómico.
 	 */
 	public static ConjuntoTDA conjuntoRepetidos(PilaTDA pila) {
 	    PilaTDA pilaAux = new PilaSt(); 
@@ -100,11 +107,13 @@ public class MetodosExternos {
 	 * @param pila La PilaTDA que se convertirá en el diccionario.
 	 * @return Un DiccionarioSimple que contiene los elementos de la pila y su cantidad de apariciones.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
-	 * @postcondiciones La pila y su contenido no se modifican.
-	 * @costo El costo de este método depende del tamaño de la pila y del diccionario resultante.
+	 * @postcondiciones La pila no se modifica.
+	 * @costo El costo es polinómico.
 	 */
 	public static DiccionarioSimple pilaADiccionario(PilaTDA pila) {
+		PilaTDA pilaAux = new PilaSt();
 		DiccionarioSimple diccionario = new DiccionarioSimpleSt();
+		pilaAux.inicializarPila();
 		diccionario.inicializarDiccionario();
 		while (!pila.pilaVacia()) {
 			if (!diccionario.claves().pertenece(pila.tope())) {
@@ -112,8 +121,15 @@ public class MetodosExternos {
 			} else {
 				diccionario.agregar(pila.tope(), diccionario.recuperar(pila.tope()) + 1);
 			}
+			pilaAux.apilar(pila.tope());
 			pila.desapilar();
 		}
+		
+	    while (!pilaAux.pilaVacia()) {
+	        pila.apilar(pilaAux.tope()); 
+	        pilaAux.desapilar(); 
+	    }
+	    
 		return diccionario;
 	}
 	
@@ -124,9 +140,8 @@ public class MetodosExternos {
 	 * @param diccionarioMultiple El DiccionarioMultipleTDA a convertir.
 	 * @return Una ColaTDA que contiene todos los valores del DiccionarioMultipleTDA sin repeticiones.
 	 * @precondiciones El DiccionarioMultipleTDA no debe ser nulo y debe estar inicializado.
-	 * @postcondiciones El DiccionarioMultipleTDA y sus estructuras internas no se modifican.
-	 * @costo El costo de este método depende del tamaño del DiccionarioMultipleTDA y de los conjuntos
-	 *        y colas utilizados en las implementaciones de las estructuras.
+	 * @postcondiciones El DiccionarioMultipleTDA y su estructura interna no se modifican.
+	 * @costo El costo es polinómico.
 	 */
 	public static ColaTDA diccionarioMultipleAColaSinRepe(DiccionarioMultipleTDA diccionarioMultiple) {
 		ConjuntoTDA conjunto = new ConjuntoSt();
@@ -156,52 +171,48 @@ public class MetodosExternos {
 	}
 	
 //	Ejercicio 8
+//	TODO
 	/**
 	 * Calcula la suma de los elementos con un valor impar en un árbol binario de búsqueda.
 	 *
 	 * @param a el árbol binario de búsqueda del cual se desea obtener la suma de los elementos impares
 	 * @return la suma de los elementos impares del árbol
-	 * 
-	 * @precondiciones El árbol `a` no debe ser nulo.
-	 * @postcondiciones El árbol `a` no se ve modificado.
-	 * @costo La complejidad de este método es O(n), donde n es el número total de elementos en el árbol.
+	 * @precondiciones El árbol 'a' no debe ser nulo.
+	 * @postcondiciones El árbol 'a' no se ve modificado.
+	 * @costo
 	 */
 	public static int sumaElementosImpares(ABBTDA a) {
 	    if (a.arbolVacio()) {
-	        return 0; // Árbol vacío, suma igual a 0
+	        return 0;
 	    } else {
 	        int suma = 0;
-	        if (a.raiz() % 2 != 0) { // Valor impar, se suma
+	        if (a.raiz() % 2 != 0) 
 	            suma += a.raiz();
-	        }
-	        suma += sumaElementosImpares(a.hijoIzq()); // Suma elementos impares del subárbol izquierdo
-	        suma += sumaElementosImpares(a.hijoDer()); // Suma elementos impares del subárbol derecho
+	        suma += sumaElementosImpares(a.hijoIzq());
+	        suma += sumaElementosImpares(a.hijoDer()); 
 	        return suma;
 	    }
 	}
 	
 //	Ejercicio 9
+//	TODO
     /**
-     * Calcula la cantidad de hojas con un valor par en un árbol binario de búsqueda.
-     *
      * Este método cuenta la cantidad de hojas en un árbol binario de búsqueda que tienen un valor par.
-     *
      * @param a El árbol binario de búsqueda.
      * @return La cantidad de hojas con un valor par en el árbol.
      * @pre El parámetro 'a' debe ser un árbol binario de búsqueda válido.
      * @post El árbol binario de búsqueda 'a' no se modifica.
-     * @costo Tiempo: O(n), donde 'n' es el número de nodos en el árbol binario de búsqueda.
+     * @costo
      */
 	public static int cantidadHojasPares(ABBTDA a) {
 	    if (a.arbolVacio()) {
 	        return 0; // El árbol está vacío, no hay hojas
 	    } else if (a.hijoIzq().arbolVacio() && a.hijoDer().arbolVacio()) {
 	        // Nodo hoja, verifica si su valor es par
-	        if (a.raiz() % 2 == 0) {
+	        if (a.raiz() % 2 == 0) 
 	            return 1;
-	        } else {
+	         else 
 	            return 0;
-	        }
 	    } else {
 	        // Nodo interno, suma las hojas con valor par de los subárboles izquierdo y derecho
 	        int cantIzq = cantidadHojasPares(a.hijoIzq());
@@ -211,15 +222,45 @@ public class MetodosExternos {
 	    }
 	}
 	
-	public static void imprimirEnOrden(ABBTDA a) {
-	    if (!a.arbolVacio()) {
-	        imprimirEnOrden(a.hijoIzq());
-	        System.out.print(a.raiz() + " ");
-	        imprimirEnOrden(a.hijoDer());
-	    }
-	}
+    public static ConjuntoTDA verticesPuente(GrafoTDA grafo, int origen, int destino) {
+        ConjuntoTDA verticesPuente = new ConjuntoSt();
+        verticesPuente.inicializarConjunto();
 
+        ConjuntoTDA vertices = grafo.vertices();
 
+        while (!vertices.conjuntoVacio()) {
+            int vertice = vertices.elegir();
+            vertices.sacar(vertice);
 
+            if (vertice != origen && vertice != destino) {
+                if (grafo.existeArista(origen, vertice) && grafo.existeArista(vertice, destino)) {
+                    verticesPuente.agregar(vertice);
+                }
+            }
+        }
+
+        return verticesPuente;
+    }
+    
+    public static int calcularGradoVertice(GrafoTDA grafo, int vertice) {
+        int aristasSalientes = 0;
+        int aristasEntrantes = 0;
+
+        ConjuntoTDA vertices = grafo.vertices();
+        while (!vertices.conjuntoVacio()) {
+            int v = vertices.elegir();
+            vertices.sacar(v);
+
+            if (vertice != v && grafo.existeArista(vertice, v)) {
+                aristasSalientes++;
+            }
+
+            if (vertice != v && grafo.existeArista(v, vertice)) {
+                aristasEntrantes++;
+            }
+        }
+
+        return aristasSalientes - aristasEntrantes;
+    }
 
 }

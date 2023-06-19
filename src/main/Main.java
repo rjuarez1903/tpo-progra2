@@ -140,6 +140,59 @@ public class Main {
 //	    // Calcular la cantidad de hojas con valor par
 //	    int hojasPares = metodosExternos.MetodosExternos.cantidadHojasPares(arbol);
 //	    System.out.println("Cantidad de hojas con valor par: " + hojasPares);
+	    
+//	    Ejercicio 10
+	    GrafoMA grafo = new GrafoMA();
+        grafo.inicializarGrafo();
+
+        // Agregar vértices
+        grafo.agregarVertice(1);
+        grafo.agregarVertice(2);
+        grafo.agregarVertice(3);
+        grafo.agregarVertice(4);
+        grafo.agregarVertice(5);
+
+        // Agregar aristas
+        grafo.agregarArista(1, 2, 1);
+        grafo.agregarArista(1, 3, 1);
+        grafo.agregarArista(2, 4, 1);
+        grafo.agregarArista(3, 4, 1);
+        grafo.agregarArista(4, 5, 1);
+
+        // Origen y destino
+        int origen = 1;
+        int destino = 4;
+
+        // Obtener vértices puente
+        ConjuntoTDA verticesPuente = metodosExternos.MetodosExternos.verticesPuente(grafo, origen, destino);
+
+        // Imprimir vértices puente
+        System.out.println("Vértices puente entre " + origen + " y " + destino + ": ");
+        while (!verticesPuente.conjuntoVacio()) {
+            int vertice = verticesPuente.elegir();
+            verticesPuente.sacar(vertice);
+            System.out.print(vertice + " ");
+        }
+        
+//        Ejercicio 11
+        
+        GrafoTDA grafo2 = new GrafoLA();
+        grafo2.inicializarGrafo();
+        grafo2.agregarVertice(1);
+        grafo2.agregarVertice(2);
+        grafo2.agregarVertice(3);
+        grafo2.agregarVertice(4);
+        grafo2.agregarVertice(5);
+        grafo2.agregarVertice(6);
+        grafo2.agregarArista(4, 2, 0); // Arista de 1 a 2
+        grafo2.agregarArista(4, 3, 0); // Arista de 1 a 3
+        grafo2.agregarArista(4, 1, 0); // Arista de 2 a 4
+        grafo2.agregarArista(3, 6, 0); // Arista de 3 a 4
+        grafo2.agregarArista(4, 5, 0); // Arista de 4 a 5
+
+        // Calcular el grado del vértice 4
+        int gradoVertice4 = metodosExternos.MetodosExternos.calcularGradoVertice(grafo2, 4);
+        System.out.println("Grado del vértice 4: " + gradoVertice4); // Salida esperada: 2
 	}
 
 }

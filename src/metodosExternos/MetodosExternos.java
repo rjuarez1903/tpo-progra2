@@ -22,7 +22,6 @@ public class MetodosExternos {
 	    }
 	}
 	
-//	Ejercicio 4
 	/**
 	 * Calcula el porcentaje de números pares en una pila.
 	 *
@@ -59,8 +58,7 @@ public class MetodosExternos {
 	    return resultado; 
 	}
 
-	
-//	Ejercicio 5
+
 	/**
 	 * Obtiene un conjunto de elementos repetidos en una pila.
 	 *
@@ -100,7 +98,7 @@ public class MetodosExternos {
 	    return conjuntoRepetidos; 
 	}
 	
-//	Ejercicio 6
+
 	/**
 	 * Convierte una pila en un diccionario simple que cuenta la cantidad de apariciones de cada elemento.
 	 *
@@ -133,7 +131,7 @@ public class MetodosExternos {
 		return diccionario;
 	}
 	
-//	Ejercicio 7
+
 	/**
 	 * Convierte un DiccionarioMultipleTDA a una ColaTDA sin elementos repetidos.
 	 *
@@ -170,8 +168,6 @@ public class MetodosExternos {
 		return cola;
 	}
 	
-//	Ejercicio 8
-//	TODO
 	/**
 	 * Calcula la suma de los elementos con un valor impar en un árbol binario de búsqueda.
 	 *
@@ -194,8 +190,6 @@ public class MetodosExternos {
 	    }
 	}
 	
-//	Ejercicio 9
-//	TODO
     /**
      * Este método cuenta la cantidad de hojas en un árbol binario de búsqueda que tienen un valor par.
      * @param a El árbol binario de búsqueda.
@@ -222,6 +216,18 @@ public class MetodosExternos {
 	    }
 	}
 	
+	/**
+	 * Encuentra y devuelve un conjunto de vértices puente en un grafo dado.
+	 * Un vértice puente es aquel vértice distinto del origen y destino que está conectado tanto con el origen como con el destino mediante aristas.
+	 *
+	 * @param grafo El GrafoTDA en el que se buscarán los vértices puente.
+	 * @param origen El vértice de origen.
+	 * @param destino El vértice de destino.
+	 * @return Un ConjuntoTDA que contiene los vértices puente encontrados en el grafo.
+	 * @precondiciones El grafo no debe ser nulo y debe estar inicializado.
+	 * @postcondiciones El grafo y los conjuntos de vértices no se modifican.
+	 * @costo El costo de este método es proporcional al tamaño del grafo.
+	 */
     public static ConjuntoTDA verticesPuente(GrafoTDA grafo, int origen, int destino) {
         ConjuntoTDA verticesPuente = new ConjuntoSt();
         verticesPuente.inicializarConjunto();
@@ -242,6 +248,17 @@ public class MetodosExternos {
         return verticesPuente;
     }
     
+    /**
+     * Calcula el grado de un vértice en un grafo dado.
+     * El grado de un vértice se define como la diferencia entre la cantidad de aristas que salen del vértice y la cantidad de aristas que llegan al vértice.
+     *
+     * @param grafo El GrafoTDA en el que se calculará el grado del vértice.
+     * @param vertice El vértice para el cual se calculará el grado.
+     * @return El grado del vértice dado.
+     * @precondiciones El grafo no debe ser nulo y debe estar inicializado.
+     * @postcondiciones El grafo y el conjunto de vértices no se modifican.
+     * @costo El costo de este método es proporcional al tamaño del grafo.
+     */
     public static int calcularGradoVertice(GrafoTDA grafo, int vertice) {
         int aristasSalientes = 0;
         int aristasEntrantes = 0;

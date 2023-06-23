@@ -23,10 +23,10 @@ public class MetodosExternos {
 	}
 	
 	/**
-	 * Calcula el porcentaje de números pares en una pila.
-	 *
-	 * @param pila La PilaTDA de la cual se calculará el porcentaje de números pares.
-	 * @return El porcentaje de números pares en la pila, como un valor de tipo double.
+	 * 
+	 * @tarea Calcula el porcentaje de números pares en una pila.
+	 * @parámetros pila La PilaTDA de la cual se calculará el porcentaje de números pares.
+	 * @devuelve El porcentaje de números pares en la pila, como un valor de tipo double.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
 	 * @postcondiciones La pila no se modifica.
 	 * @costo El costo de este método el lineal.
@@ -60,10 +60,9 @@ public class MetodosExternos {
 
 
 	/**
-	 * Obtiene un conjunto de elementos repetidos en una pila.
-	 *
-	 * @param pila La PilaTDA de la cual se obtendrán los elementos repetidos.
-	 * @return Un ConjuntoTDA que contiene los elementos repetidos en la pila.
+	 * @tarea Obtiene un conjunto de elementos repetidos en una pila.
+	 * @parámetros pila La PilaTDA de la cual se obtendrán los elementos repetidos.
+	 * @devuelve Un ConjuntoTDA que contiene los elementos repetidos en la pila.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
 	 * @postcondiciones La pila no se modifica.
 	 * @costo El costo de este método es polinómico.
@@ -100,10 +99,9 @@ public class MetodosExternos {
 	
 
 	/**
-	 * Convierte una pila en un diccionario simple que cuenta la cantidad de apariciones de cada elemento.
-	 *
-	 * @param pila La PilaTDA que se convertirá en el diccionario.
-	 * @return Un DiccionarioSimple que contiene los elementos de la pila y su cantidad de apariciones.
+	 * @tarea Convierte una pila en un diccionario simple que cuenta la cantidad de apariciones de cada elemento.
+	 * @parámetros pila La PilaTDA que se convertirá en el diccionario.
+	 * @devuelve Un DiccionarioSimple que contiene los elementos de la pila y su cantidad de apariciones.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
 	 * @postcondiciones La pila no se modifica.
 	 * @costo El costo es polinómico.
@@ -133,10 +131,9 @@ public class MetodosExternos {
 	
 
 	/**
-	 * Convierte un DiccionarioMultipleTDA a una ColaTDA sin elementos repetidos.
-	 *
-	 * @param diccionarioMultiple El DiccionarioMultipleTDA a convertir.
-	 * @return Una ColaTDA que contiene todos los valores del DiccionarioMultipleTDA sin repeticiones.
+	 * @tarea Convierte un DiccionarioMultipleTDA a una ColaTDA sin elementos repetidos.
+	 * @parámetros diccionarioMultiple El DiccionarioMultipleTDA a convertir.
+	 * @devuelve Una ColaTDA que contiene todos los valores del DiccionarioMultipleTDA sin repeticiones.
 	 * @precondiciones El DiccionarioMultipleTDA no debe ser nulo y debe estar inicializado.
 	 * @postcondiciones El DiccionarioMultipleTDA y su estructura interna no se modifican.
 	 * @costo El costo es polinómico.
@@ -169,10 +166,9 @@ public class MetodosExternos {
 	}
 	
 	/**
-	 * Calcula la suma de los elementos con un valor impar en un árbol binario de búsqueda.
-	 *
-	 * @param a el árbol binario de búsqueda del cual se desea obtener la suma de los elementos impares
-	 * @return la suma de los elementos impares del árbol
+	 * @tarea Calcula la suma de los elementos con un valor impar en un árbol binario de búsqueda.
+	 * @parámetros a el árbol binario de búsqueda del cual se desea obtener la suma de los elementos impares
+	 * @devuelve la suma de los elementos impares del árbol
 	 * @precondiciones El árbol 'a' no debe ser nulo.
 	 * @postcondiciones El árbol 'a' no se ve modificado.
 	 * @costo
@@ -191,12 +187,12 @@ public class MetodosExternos {
 	}
 	
     /**
-     * Este método cuenta la cantidad de hojas en un árbol binario de búsqueda que tienen un valor par.
-     * @param a El árbol binario de búsqueda.
-     * @return La cantidad de hojas con un valor par en el árbol.
-     * @pre El parámetro 'a' debe ser un árbol binario de búsqueda válido.
-     * @post El árbol binario de búsqueda 'a' no se modifica.
-     * @costo
+     * @tarea Este método cuenta la cantidad de hojas en un árbol binario de búsqueda que tienen un valor par.
+     * @parámetros a El árbol binario de búsqueda.
+     * @devuelve La cantidad de hojas con un valor par en el árbol.
+     * @precondiciones El parámetro 'a' debe ser un árbol binario de búsqueda válido.
+     * @postcondiciones El árbol binario de búsqueda 'a' no se modifica.
+     * @costo 
      */
 	public static int cantidadHojasPares(ABBTDA a) {
 	    if (a.arbolVacio()) {
@@ -217,16 +213,15 @@ public class MetodosExternos {
 	}
 	
 	/**
-	 * Encuentra y devuelve un conjunto de vértices puente en un grafo dado.
-	 * Un vértice puente es aquel vértice distinto del origen y destino que está conectado tanto con el origen como con el destino mediante aristas.
-	 *
-	 * @param grafo El GrafoTDA en el que se buscarán los vértices puente.
-	 * @param origen El vértice de origen.
-	 * @param destino El vértice de destino.
-	 * @return Un ConjuntoTDA que contiene los vértices puente encontrados en el grafo.
+	 * @tarea Encuentra y devuelve un conjunto de vértices puente en un grafo dado.
+	 * @paramámetros
+	 * 		grafo El GrafoTDA en el que se buscarán los vértices puente.
+	 * 		origen El vértice de origen.
+	 * 		destino El vértice de destino.
+	 * @devuelve Un ConjuntoTDA que contiene los vértices puente encontrados en el grafo.
 	 * @precondiciones El grafo no debe ser nulo y debe estar inicializado.
 	 * @postcondiciones El grafo y los conjuntos de vértices no se modifican.
-	 * @costo El costo de este método es proporcional al tamaño del grafo.
+	 * @costo 
 	 */
     public static ConjuntoTDA verticesPuente(GrafoTDA grafo, int origen, int destino) {
         ConjuntoTDA verticesPuente = new ConjuntoSt();
@@ -249,15 +244,14 @@ public class MetodosExternos {
     }
     
     /**
-     * Calcula el grado de un vértice en un grafo dado.
-     * El grado de un vértice se define como la diferencia entre la cantidad de aristas que salen del vértice y la cantidad de aristas que llegan al vértice.
-     *
-     * @param grafo El GrafoTDA en el que se calculará el grado del vértice.
-     * @param vertice El vértice para el cual se calculará el grado.
-     * @return El grado del vértice dado.
+     * @tarea Calcula el grado de un vértice en un grafo dado.
+     * @parámetros 
+     * 		grafo El GrafoTDA en el que se calculará el grado del vértice.
+     * 		vertice El vértice para el cual se calculará el grado.
+     * @devuelve El grado del vértice dado.
      * @precondiciones El grafo no debe ser nulo y debe estar inicializado.
      * @postcondiciones El grafo y el conjunto de vértices no se modifican.
-     * @costo El costo de este método es proporcional al tamaño del grafo.
+     * @costo
      */
     public static int calcularGradoVertice(GrafoTDA grafo, int vertice) {
         int aristasSalientes = 0;

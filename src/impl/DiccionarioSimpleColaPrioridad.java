@@ -33,6 +33,10 @@ public class DiccionarioSimpleColaPrioridad implements DiccionarioSimple {
      */
     // Agrega un par clave-valor al diccionario
     public void agregar(int clave, int valor) {
+        ConjuntoTDA claves = claves();
+        if (claves.pertenece(clave)) {
+            eliminar(clave);
+        }
         colaPrioridad.acolarPrioridad(valor, clave);
     }
     
@@ -42,7 +46,7 @@ public class DiccionarioSimpleColaPrioridad implements DiccionarioSimple {
      * @parámetros clave La clave del par a eliminar.
      * @precondiciones El diccionario debe estar inicializado.
      * @postcondiciones El par clave-valor con la clave especificada queda eliminado del diccionario.
-     * @costo El costo es lineal, dependiendo del número de elementos en el diccionario.
+     * @costo El costo es polinómico, dado que se ejecuta un ciclo dentro de otro ciclo.
      */
     // Elimina un par clave-valor del diccionario
     public void eliminar(int clave) {

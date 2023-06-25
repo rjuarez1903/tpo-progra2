@@ -33,7 +33,6 @@ public class ConjuntoEspecial implements ConjuntoEspecialTDA {
         Respuesta respuesta = new Respuesta(); // Se crea una instancia de Respuesta para almacenar el resultado
         if (conjunto.pertenece(valor)) { // Si el valor ya pertenece al conjunto interno
             respuesta.error = true; // Se establece el error en true
-            respuesta.rta = 0; // Se asigna un valor por defecto en caso de error
         } else {
             conjunto.agregar(valor); // Se agrega el valor al conjunto interno
             respuesta.error = false; // No hay error
@@ -57,7 +56,6 @@ public class ConjuntoEspecial implements ConjuntoEspecialTDA {
             respuesta.error = false; // No hay error
         } else {
             respuesta.error = true; // Se establece el error en true
-            respuesta.rta = 0; // Se asigna un valor por defecto en caso de error
         }
         return respuesta; // Se retorna la respuesta
     }

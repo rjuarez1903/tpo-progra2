@@ -169,7 +169,7 @@ public class MetodosExternos {
 	 * @devuelve la suma de los elementos impares del árbol
 	 * @precondiciones El árbol 'a' no debe ser nulo.
 	 * @postcondiciones El árbol 'a' no se ve modificado.
-	 * @costo El costo será logarítmico o lineal, dependiendo de si es árbol está balancesdo o no
+	 * @costo El costo será logarítmico o lineal, dependiendo de si es árbol está balanceado o no
 	 */
 	public static int sumaElementosImpares(ABBTDA a) {
 	    if (a.arbolVacio()) {
@@ -190,7 +190,7 @@ public class MetodosExternos {
      * @devuelve La cantidad de hojas con un valor par en el árbol.
      * @precondiciones El parámetro 'a' debe ser un árbol binario de búsqueda válido.
      * @postcondiciones El árbol binario de búsqueda 'a' no se modifica.
-	 * @costo El costo será logarítmico o lineal, dependiendo de si es árbol está balancesdo o no
+	 * @costo El costo será logarítmico o lineal, dependiendo de si es árbol está balanceado o no
      */
 	public static int cantidadHojasPares(ABBTDA a) {
 	    if (a.arbolVacio()) {

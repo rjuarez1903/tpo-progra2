@@ -92,7 +92,7 @@ public class MultiPila implements MultiPilaTDA {
      * @precondiciones La pila principal debe estar inicializada y no vacía.
      * @postcondiciones El valor tope de la pila principal no se modifica.
      * @devuelve El valor tope de la pila principal.
-     * @costo El costo es constante.
+     * @costo El costo es lineal.
      */
     @Override
     public PilaTDA tope(int cantidad) {

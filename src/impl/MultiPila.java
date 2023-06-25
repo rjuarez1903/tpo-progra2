@@ -5,7 +5,6 @@ import tda.PilaTDA;
 
 public class MultiPila implements MultiPilaTDA {
     private PilaTDA pila;
-
     
     /**
      * @tarea Inicializa la pila principal.
@@ -47,7 +46,6 @@ public class MultiPila implements MultiPilaTDA {
             pilaTemporal.desapilar();
         }
     }
-    
     
     /**
      * @tarea Desapila los elementos de una pila de la pila principal.
@@ -120,7 +118,6 @@ public class MultiPila implements MultiPilaTDA {
 
         return pilaTope;
     }
-
 
     /**
      * @tarea Verifica si la pila principal está vacía.

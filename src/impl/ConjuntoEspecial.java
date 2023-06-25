@@ -1,8 +1,8 @@
 package impl;
 
+import auxiliar.Respuesta;
 import tda.ConjuntoEspecialTDA;
 import tda.ConjuntoTDA;
-import aux.Respuesta;
 
 public class ConjuntoEspecial implements ConjuntoEspecialTDA {
     private ConjuntoTDA conjunto;

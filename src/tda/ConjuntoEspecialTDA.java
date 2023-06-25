@@ -1,6 +1,6 @@
 package tda;
 
-import aux.Respuesta;
+import auxiliar.Respuesta;
 
 public interface ConjuntoEspecialTDA { 
 

@@ -1,8 +1,7 @@
 package main;
 
+import auxiliar.*;
 import impl.*;
-
-import aux.*;
 import metodosExternos.MetodosExternos;
 import tda.*;
 

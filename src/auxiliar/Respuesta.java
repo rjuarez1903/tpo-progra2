@@ -1,4 +1,4 @@
-package aux;
+package auxiliar;
 
 public class Respuesta {
 	public boolean error;

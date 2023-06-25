@@ -59,27 +59,31 @@ public class MultiPila implements MultiPilaTDA {
         // Se utiliza una pila temporal para almacenar los valores que no se desapilan
         PilaTDA pilaTemporal = new PilaSt();
         pilaTemporal.inicializarPila();
+        boolean coinciden = true;
 
-        // Se verifica si los valores tope de la pila principal coinciden con los valores tope de la pila "valores"
-        while (!pila.pilaVacia() && !valores.pilaVacia()) {
-            if (pila.tope() == valores.tope()) {
-                pila.desapilar();
-                valores.desapilar();
+        // Se verifica si los valores tope de la pila principal coinciden con los
+        // valores tope de la pila "valores"
+        while (!pila.pilaVacia() && !valores.pilaVacia() && coinciden) {
+
+            if (pila.tope() != valores.tope()) {
+                coinciden = false;
             } else {
                 pilaTemporal.apilar(pila.tope());
                 pila.desapilar();
+                valores.desapilar();
             }
         }
 
-        // Se transfieren los valores restantes de la pila principal a la pila temporal
-        while (!pila.pilaVacia()) {
-            pilaTemporal.apilar(pila.tope());
-            pila.desapilar();
+        if (pila.pilaVacia() && !valores.pilaVacia()) {
+            coinciden = false;
         }
 
-        // Se transfieren los valores de la pila temporal nuevamente a la pila principal
+        // Se transfieren los valores de la pila temporal a la pila recibida y a la pila principal (si corresponde)
         while (!pilaTemporal.pilaVacia()) {
-            pila.apilar(pilaTemporal.tope());
+            if (!coinciden) {
+                pila.apilar(pilaTemporal.tope());
+            }
+            valores.apilar(pilaTemporal.tope());
             pilaTemporal.desapilar();
         }
     }

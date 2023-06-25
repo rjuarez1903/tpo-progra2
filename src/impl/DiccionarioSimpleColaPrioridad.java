@@ -90,14 +90,8 @@ public class DiccionarioSimpleColaPrioridad implements DiccionarioSimple {
             }
         }
 
-        // Restaura la cola original a partir de la cola auxiliar
-        while (!colaAuxiliar.colaVacia()) {
-            int valor = colaAuxiliar.primero();
-            int claveActual = colaAuxiliar.prioridad();
-            colaAuxiliar.desacolar();
-            colaPrioridad.acolarPrioridad(valor, claveActual);
-        }
-
+        colaPrioridad = colaAuxiliar; // La cola original ahora es la cola auxiliar
+        
         return valorRecuperado;
     }
     

@@ -8,40 +8,24 @@ import tda.*;
 
 public class Main {
 	public static void main(String[] args) {
-	    PilaTDA pila = new PilaSt();
-	    pila.inicializarPila();
-	    pila.apilar(10);
-	    pila.apilar(10);
-	    pila.apilar(5);
-	    pila.apilar(20);
-	    pila.apilar(15);
-	    pila.apilar(15);
-	    
-	    PilaTDA pila2 = new PilaSt();
-	    pila2.inicializarPila();
-	    pila2.apilar(100);
-	    pila2.apilar(200);
-	    pila2.apilar(300);
-	    
-//	    Ejercicio 4
-//	    System.out.println(MetodosPila.porcentajeDePares(pila));
-	    ConjuntoTDA conjuntoRepe = metodosExternos.MetodosExternos.conjuntoRepetidos(pila);
-	    metodosExternos.MetodosExternos.imprimirConjunto(conjuntoRepe);
-	    
-//	    Ejercicio 5
+		
+//		Data de testeo  
+//	    PilaTDA pila = new PilaSt();
+//	    pila.inicializarPila();
+//	    pila.apilar(10);
+//	    pila.apilar(10);
+//	    pila.apilar(5);
+//	    pila.apilar(20);
+//	    pila.apilar(15);
+//	    pila.apilar(15);
 //	    
-//	    DiccionarioSimple diccionario = MetodosExternos.pilaADiccionario(pila);
-//	    System.out.println(diccionario.recuperar(10));
-//	    System.out.println(diccionario.recuperar(5));
-//	    System.out.println(diccionario.recuperar(20));
-//	    System.out.println(diccionario.recuperar(15));
-	    
-//	    MultiPilaTDA multipila = new MultiPila();
-//	    multipila.inicializarPila();
-//	    multipila.apilar(pila);
-//	    multipila.apilar(pila2);
-	    
-//	    Conjunto Especial
+//	    PilaTDA pila2 = new PilaSt();
+//	    pila2.inicializarPila();
+//	    pila2.apilar(100);
+//	    pila2.apilar(200);
+//	    pila2.apilar(300);
+		
+//	    Ejercicio 1 Conjunto Especial
 //      ConjuntoEspecialTDA conjunto = new ConjuntoEspecial();
 //      conjunto.inicializarConjunto();
 //
@@ -62,7 +46,13 @@ public class Main {
 //      System.out.println(conjuntoVacio);
 //      System.out.println(respuesta5.rta);
 //
-//	    Multipila	    
+//	    Ejercicio 2 Multipila
+		
+//	    MultiPilaTDA multipila = new MultiPila();
+//	    multipila.inicializarPila();
+//	    multipila.apilar(pila);
+//	    multipila.apilar(pila2);
+	    	    
 //	    PilaTDA pilaResultado = multipila.tope(2);
 //	    while (!pilaResultado.pilaVacia()) {
 //	        System.out.println(pilaResultado.tope());
@@ -70,7 +60,8 @@ public class Main {
 //	    }
 //	    
 //	    System.out.println(multipila.pilaVacia());
-	    
+		
+//	    Ejercicio 3 Diccionario Simple Cola Prioridad
 //	    Diccionario Simple Cola Prioridad
 	    
 //        DiccionarioSimpleColaPrioridad diccionario = new DiccionarioSimpleColaPrioridad();
@@ -93,13 +84,45 @@ public class Main {
 //            System.out.println("Clave: " + clave);
 //            claves.sacar(clave);
 //        }
+		    
+//	    Ejercicio 4
+//	    System.out.println(metodosExternos.MetodosExternos.porcentajeDePares(pila));
 	    
+//	    Ejercicio 5
+//	    ConjuntoTDA conjuntoRepe = metodosExternos.MetodosExternos.conjuntoRepetidos(pila);
+//	    metodosExternos.MetodosExternos.imprimirConjunto(conjuntoRepe);
+	    
+//	    Ejercicio 6
+//	    DiccionarioSimple diccionario = metodosExternos.MetodosExternos.pilaADiccionario(pila);
+//	    System.out.println(diccionario.recuperar(10));
+//	    System.out.println(diccionario.recuperar(5));
+//	    System.out.println(diccionario.recuperar(20));
+//	    System.out.println(diccionario.recuperar(15));
+		
+		
+//		Ejercicio 7
+//		DiccionarioMultipleTDA diccionarioMultiple = new DiccionarioMultipleSt();
+//		diccionarioMultiple.inicializarDiccionario();
+//
+//		diccionarioMultiple.agregar(1, 10);
+//		diccionarioMultiple.agregar(1, 20);
+//		diccionarioMultiple.agregar(2, 20);
+//		diccionarioMultiple.agregar(3, 20);
+//		diccionarioMultiple.agregar(1, 10);
+//		diccionarioMultiple.agregar(3, 50);
+//
+//		ColaTDA cola = metodosExternos.MetodosExternos.diccionarioMultipleAColaSinRepe(diccionarioMultiple);
+//
+//		while (!cola.colaVacia()) {
+//		    System.out.println(cola.primero());
+//		    cola.desacolar();
+//		}
 //	    Ejercicio 8
 	    
 //	    ABBTDA arbol = new ABB();
 //	    arbol.inicializarArbol();
 	    
-	    // Agregar elementos al árbol
+//	    Agregar elementos al árbol
 //	    arbol.agregarElem(5);
 //	    arbol.agregarElem(3);
 //	    arbol.agregarElem(8);
@@ -114,7 +137,6 @@ public class Main {
 //	    System.out.println("La suma de los elementos impares es: " + sumaImpares);
 	    
 //	    Ejercicio 9
-	    
 //	    ABBTDA arbol = new ABB();
 //	    arbol.inicializarArbol();
 //	    arbol.agregarElem(20);

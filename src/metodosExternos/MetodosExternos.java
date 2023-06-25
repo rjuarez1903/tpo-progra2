@@ -29,7 +29,7 @@ public class MetodosExternos {
 	 * @devuelve El porcentaje de números pares en la pila, como un valor de tipo double.
 	 * @precondiciones La pila no debe ser nula y debe estar inicializada.
 	 * @postcondiciones La pila no se modifica.
-	 * @costo El costo de este método el lineal.
+	 * @costo El costo de este método es lineal.
 	 */
 	
 	public static double porcentajeDePares(PilaTDA pila) {
@@ -75,7 +75,6 @@ public class MetodosExternos {
 	    conjuntoAux.inicializarConjunto();
 	    conjuntoRepetidos.inicializarConjunto();
 	    
-
 	    while (!pila.pilaVacia()) {
 	        int elemento = pila.tope();
 	       
@@ -87,8 +86,7 @@ public class MetodosExternos {
 	        pilaAux.apilar(elemento); 
 	        pila.desapilar(); 
 	    }
-
-	    
+ 
 	    while (!pilaAux.pilaVacia()) {
 	        pila.apilar(pilaAux.tope()); 
 	        pilaAux.desapilar(); 
@@ -111,12 +109,12 @@ public class MetodosExternos {
 		DiccionarioSimple diccionario = new DiccionarioSimpleSt();
 		pilaAux.inicializarPila();
 		diccionario.inicializarDiccionario();
+		
 		while (!pila.pilaVacia()) {
-			if (!diccionario.claves().pertenece(pila.tope())) {
+			if (!diccionario.claves().pertenece(pila.tope())) 
 				diccionario.agregar(pila.tope(), 1);
-			} else {
+			else 
 				diccionario.agregar(pila.tope(), diccionario.recuperar(pila.tope()) + 1);
-			}
 			pilaAux.apilar(pila.tope());
 			pila.desapilar();
 		}
@@ -171,7 +169,7 @@ public class MetodosExternos {
 	 * @devuelve la suma de los elementos impares del árbol
 	 * @precondiciones El árbol 'a' no debe ser nulo.
 	 * @postcondiciones El árbol 'a' no se ve modificado.
-	 * @costo
+	 * @costo El costo será logarítmico o lineal, dependiendo de si es árbol está balancesdo o no
 	 */
 	public static int sumaElementosImpares(ABBTDA a) {
 	    if (a.arbolVacio()) {
@@ -192,7 +190,7 @@ public class MetodosExternos {
      * @devuelve La cantidad de hojas con un valor par en el árbol.
      * @precondiciones El parámetro 'a' debe ser un árbol binario de búsqueda válido.
      * @postcondiciones El árbol binario de búsqueda 'a' no se modifica.
-     * @costo 
+	 * @costo El costo será logarítmico o lineal, dependiendo de si es árbol está balancesdo o no
      */
 	public static int cantidadHojasPares(ABBTDA a) {
 	    if (a.arbolVacio()) {
@@ -220,8 +218,8 @@ public class MetodosExternos {
 	 * 		destino El vértice de destino.
 	 * @devuelve Un ConjuntoTDA que contiene los vértices puente encontrados en el grafo.
 	 * @precondiciones El grafo no debe ser nulo y debe estar inicializado.
-	 * @postcondiciones El grafo y los conjuntos de vértices no se modifican.
-	 * @costo 
+	 * @postcondiciones El grafo no se modifica.
+	 * @costo El costo es polinómico, dado que encontramos ciclos dentro de ciclos.
 	 */
     public static ConjuntoTDA verticesPuente(GrafoTDA grafo, int origen, int destino) {
         ConjuntoTDA verticesPuente = new ConjuntoSt();
@@ -251,7 +249,7 @@ public class MetodosExternos {
      * @devuelve El grado del vértice dado.
      * @precondiciones El grafo no debe ser nulo y debe estar inicializado.
      * @postcondiciones El grafo y el conjunto de vértices no se modifican.
-     * @costo
+     * @costo El costo es polinómico, dado que encontramos ciclos dentro de ciclos.
      */
     public static int calcularGradoVertice(GrafoTDA grafo, int vertice) {
         int aristasSalientes = 0;

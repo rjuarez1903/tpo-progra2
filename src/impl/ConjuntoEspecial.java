@@ -96,6 +96,13 @@ public class ConjuntoEspecial implements ConjuntoEspecialTDA {
         return conjunto.pertenece(valor); // Se verifica si el valor pertenece al conjunto interno
     }
 
+    /**
+     * @tarea Verifica si el conjunto especial está vacío.
+     * @precondiciones El conjunto especial debe estar inicializado.
+     * @postcondiciones El conjunto especial no se modifica.
+     * @retorna true si el conjunto especial está vacío, false en caso contrario.
+     * @costo El costo es constante.
+     */
     public boolean conjuntoVacio() {
         return conjunto.conjuntoVacio(); // Se verifica si el conjunto interno está vacío
     }

@@ -77,7 +77,6 @@ public class ConjuntoEspecial implements ConjuntoEspecialTDA {
             respuesta.rta = conjunto.elegir(); // Se obtiene el valor elegido del conjunto interno
         } else {
             respuesta.error = true; // Se establece el error en true
-            respuesta.rta = 0; // Se asigna un valor por defecto en caso de error
         }
         return respuesta; // Se retorna la respuesta
     }

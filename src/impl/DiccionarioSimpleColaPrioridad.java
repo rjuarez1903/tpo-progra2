@@ -29,7 +29,7 @@ public class DiccionarioSimpleColaPrioridad implements DiccionarioSimple {
      * 		valor El valor asociado a la clave.
      * @precondiciones El diccionario debe estar inicializado.
      * @postcondiciones El par clave-valor queda agregado al diccionario.
-     * @costo El costo es lineal.
+     * @costo El costo es polinómico.
      */
     // Agrega un par clave-valor al diccionario
     public void agregar(int clave, int valor) {
